@@ -1,11 +1,29 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="android:Theme.Light.NoTitleBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowBackground">@color/backgroud_main</item>
+        <item name="selectableItemBackground">@drawable/mitem_selector_background</item>
+    </style>
+
+    <style name="my_main_item_liner">
+        <item name="layout_width">match_parent</item>
+        <item name="layout_height">wrap_content</item>
+        <item name="gravity">center_vertical</item>
+        <item name="orientation">horizontal</item>
+    </style>
+
+    <style name="my_main_item_text">
+        <item name="layout_width">0dp</item>
+        <item name="layout_height">wrap_content</item>
+        <item name="layout_weight">1</item>
+        <item name="gravity">center_vertical</item>
+        <item name="textColor">@color/default_text_color</item>
+        <item name="textSize">15sp</item>
     </style>
 
 </resources>
