@@ -10,20 +10,4 @@
         <item name="selectableItemBackground">@drawable/mitem_selector_background</item>
     </style>
 
-    <style name="my_main_item_liner">
-        <item name="layout_width">match_parent</item>
-        <item name="layout_height">wrap_content</item>
-        <item name="gravity">center_vertical</item>
-        <item name="orientation">horizontal</item>
-    </style>
-
-    <style name="my_main_item_text">
-        <item name="layout_width">0dp</item>
-        <item name="layout_height">wrap_content</item>
-        <item name="layout_weight">1</item>
-        <item name="gravity">center_vertical</item>
-        <item name="textColor">@color/default_text_color</item>
-        <item name="textSize">15sp</item>
-    </style>
-
 </resources>

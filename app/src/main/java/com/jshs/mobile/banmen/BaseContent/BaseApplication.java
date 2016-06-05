@@ -1,9 +1,9 @@
-package com.jshs.mobile.banmen.BaseClasses;
+package com.jshs.mobile.banmen.BaseContent;
 
 import android.app.Application;
 
 import com.jshs.mobile.banmen.Http.AsyncHttp;
-import com.jshs.mobile.banmen.Util.ScreenUtils;
+import com.jshs.mobile.banmen.Tools.ScreenUtils;
 
 /**
  * Created by SZH on 2016/6/4.

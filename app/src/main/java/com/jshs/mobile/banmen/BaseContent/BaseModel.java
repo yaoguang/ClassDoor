@@ -1,4 +1,4 @@
-package com.jshs.mobile.banmen.Models;
+package com.jshs.mobile.banmen.BaseContent;
 
 import java.io.Serializable;
 

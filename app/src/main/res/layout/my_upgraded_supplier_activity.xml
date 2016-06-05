@@ -24,7 +24,7 @@
                 android:paddingRight="20dp"
                 android:paddingTop="15dp">
 
-                <com.jshs.mobile.banmen.Views.CircleImageView
+                <com.jshs.mobile.banmen.UIComponents.CircleImageView
                     android:id="@+id/icon"
                     android:layout_width="70dp"
                     android:layout_height="70dp"

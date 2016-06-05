@@ -1,4 +1,4 @@
-package com.jshs.mobile.banmen.Views;
+package com.jshs.mobile.banmen.UIComponents;
 
 import android.content.Context;
 import android.content.res.TypedArray;
