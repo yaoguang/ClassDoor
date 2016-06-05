@@ -4,7 +4,13 @@
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="backgroud_main">#f1f2ed</color>
     <color name="white">#ffffff</color>
     <color name="default_select_item_color">#17000000</color>
     <color name="transparent">#00000000</color>
+    <color name="cutting_line">#dfdfe1</color>
+    <color name="default_text_color">#333333</color>
+    <color name="default_text_middle_color">#666666</color>
+    <color name="default_text_light_color">#999999</color>
+    <color name="button_red">#dc3e3c</color>
 </resources>
