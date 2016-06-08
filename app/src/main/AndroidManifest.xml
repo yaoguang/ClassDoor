@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.jshs.mobile.banmen">
+<manifest package="com.jshs.mobile.banmen"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:name="com.jshs.mobile.banmen.BaseContent.BaseApplication"
@@ -9,13 +9,15 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FunctionPage.HomeActivity">
+        <activity android:name=".FunctionPage.Blank.BlankActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+
+        <activity android:name=".FunctionPage.Home.HomeActivity"/>
     </application>
 
 </manifest>

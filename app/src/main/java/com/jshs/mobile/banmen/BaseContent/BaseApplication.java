@@ -27,4 +27,8 @@ public class BaseApplication extends Application {
         AsyncHttp.setContext(this);
         ScreenUtils.setContext(this);
     }
+
+	public String TAG() {
+		return getClass().getSimpleName();
+	}
 }
