@@ -16,7 +16,7 @@
         <EditText
             android:id="@+id/phone"
             android:layout_width="0dp"
-            android:layout_height="40dp"
+            android:layout_height="35dp"
             android:layout_weight="1"
             android:background="@null"
             android:drawableLeft="@drawable/repair_house"
@@ -32,7 +32,7 @@
         <TextView
             android:id="@+id/get_code"
             android:layout_width="80dp"
-            android:layout_height="40dp"
+            android:layout_height="30dp"
             android:layout_marginLeft="10dp"
             android:gravity="center"
             android:text="获取验证码"
@@ -43,13 +43,13 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="1dp"
         android:background="@color/cutting_line" />
 
     <EditText
         android:id="@+id/code"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:background="@null"
         android:drawableLeft="@drawable/repair_house"
         android:drawablePadding="3dp"
@@ -64,13 +64,13 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="1dp"
         android:background="@color/cutting_line" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:background="@null"
         android:drawableLeft="@drawable/repair_house"
         android:drawablePadding="3dp"
@@ -85,13 +85,13 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="1dp"
         android:background="@color/cutting_line" />
 
     <EditText
         android:id="@+id/affirm_password"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="35dp"
         android:background="@null"
         android:drawableLeft="@drawable/repair_house"
         android:drawablePadding="3dp"
@@ -106,14 +106,14 @@
     <View
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_marginTop="3dp"
+        android:layout_marginTop="1dp"
         android:background="@color/cutting_line" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="35dp"
-        android:layout_marginTop="25dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="20dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -143,11 +143,11 @@
     <TextView
         android:id="@+id/regist"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:background="@drawable/frame_arc_cuttingline_25dp"
+        android:layout_height="35dp"
+        android:background="@drawable/frame_arc_cuttingline_17dp"
         android:gravity="center"
         android:text="立即注册"
         android:textColor="@color/default_text_middle_color"
-        android:textSize="18sp" />
+        android:textSize="17sp" />
 
 </LinearLayout>

@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.jshs.mobile.banmen.BaseContent.BaseHomePager;
 import com.jshs.mobile.banmen.R;
@@ -18,8 +17,8 @@ public class MineFragment extends BaseHomePager {
 
     @Override
     public void onPagerSelect() {
-        TextView textView = (TextView) _rootView.findViewById(R.id.text);
-        textView.setText(TAG());
+//        TextView textView = (TextView) _rootView.findViewById(R.id.text);
+//        textView.setText(TAG());
     }
 
 
