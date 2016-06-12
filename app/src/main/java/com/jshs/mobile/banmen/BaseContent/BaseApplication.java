@@ -11,9 +11,9 @@ import org.xutils.x;
  * Created by SZH on 2016/6/4.
  */
 public class BaseApplication extends Application {
-    private BaseApplication mInstance;
+    private static BaseApplication mInstance;
 
-    public BaseApplication getInstance() {
+    public static BaseApplication getInstance() {
         return mInstance;
     }
 
