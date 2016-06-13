@@ -1,13 +1,9 @@
 package com.jshs.mobile.banmen.Http;
 
-import com.jshs.mobile.banmen.BaseContent.BaseModel;
-
-import java.lang.reflect.Type;
-
 /**
  * Created by SZH on 2016/6/10.
  */
-public class Result<T> extends BaseModel implements Type {
+public class Result<T> {
     public int status;
     public String msg;
     public int code;

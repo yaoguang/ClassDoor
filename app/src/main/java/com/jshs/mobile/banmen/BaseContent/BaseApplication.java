@@ -3,8 +3,10 @@ package com.jshs.mobile.banmen.BaseContent;
 import android.app.Application;
 
 import com.jshs.mobile.banmen.Http.AsyncHttp;
+import com.jshs.mobile.banmen.Models.DataBase;
 import com.jshs.mobile.banmen.Tools.ScreenUtils;
 
+import org.xutils.DbManager;
 import org.xutils.x;
 
 /**
@@ -23,6 +25,14 @@ public class BaseApplication extends Application {
         mInstance = this;
 
         initNeedContext();
+
+        DataBase.setContext(this);
+        DataBase.getInstance(new DataBase.OnDbUpgradeListener() {
+            @Override
+            public void onDbUpgradeComplete(DbManager dbManager) {
+
+            }
+        });
     }
 
     private void initNeedContext() {

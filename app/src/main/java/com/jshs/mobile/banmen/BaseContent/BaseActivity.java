@@ -8,6 +8,6 @@ import android.app.Activity;
 public abstract class BaseActivity extends Activity{
 
 	public String TAG() {
-		return getClass().getSimpleName();
+		return getClass().getSimpleName(); 
 	}
 }

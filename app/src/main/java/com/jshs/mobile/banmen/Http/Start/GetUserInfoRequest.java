@@ -6,7 +6,7 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.jshs.mobile.banmen.Http.CodeError;
 import com.jshs.mobile.banmen.Http.Domain;
 import com.jshs.mobile.banmen.Http.PostRequest;
-import com.jshs.mobile.banmen.Models.UserModel;
+import com.jshs.mobile.banmen.Models.User;
 import com.jshs.mobile.banmen.Tools.GsonUtils;
 
 import java.io.UnsupportedEncodingException;
@@ -14,15 +14,15 @@ import java.io.UnsupportedEncodingException;
 /**
  * Created by SZH on 2016/6/12.
  */
-public class GetUserInfoRequest extends PostRequest<UserModel> {
-    public GetUserInfoRequest(int uid, String token, Response.Listener<UserModel> listener, Response.ErrorListener errorListener) {
+public class GetUserInfoRequest extends PostRequest<User> {
+    public GetUserInfoRequest(int uid, String token, Response.Listener<User> listener, Response.ErrorListener errorListener) {
         super(Domain.GET_USER_INFO, listener, errorListener);
         mRequestArgs.put("uid", String.valueOf(uid));
         mRequestArgs.put("token", token);
     }
 
     @Override
-    protected Response<UserModel> parseNetworkResponse(NetworkResponse response) {
+    protected Response<User> parseNetworkResponse(NetworkResponse response) {
         try {
             UserResult result = GsonUtils.getInstance().parse(UserResult.class, getResponseData(response));
             if (result != null && result.isSuccess()) {
