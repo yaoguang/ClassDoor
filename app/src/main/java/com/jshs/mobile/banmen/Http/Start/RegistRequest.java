@@ -12,13 +12,14 @@ import com.jshs.mobile.banmen.Tools.GsonUtils;
 import java.io.UnsupportedEncodingException;
 
 /**
- * Created by SZH on 2016/6/10.
+ * Created by SZH on 2016/6/12.
  */
-public class GetSmsRequest extends PostRequest<String> {
-    public GetSmsRequest(String mobile, SMSType type, Response.Listener<String> listener, Response.ErrorListener errorListener) {
-        super(Domain.GET_SMS_CODE, listener, errorListener);
+public class RegistRequest extends PostRequest<String> {
+    public RegistRequest(String mobile, String password, String verifycode, Response.Listener<String> listener, Response.ErrorListener errorListener) {
+        super(Domain.REGIST, listener, errorListener);
         mRequestArgs.put("mobile", mobile);
-        mRequestArgs.put("type", type.type);
+        mRequestArgs.put("password", password);
+        mRequestArgs.put("verifycode", verifycode);
     }
 
     @Override
@@ -36,14 +37,5 @@ public class GetSmsRequest extends PostRequest<String> {
             e.printStackTrace();
         }
         return Response.error(new CodeError());
-    }
-
-    public enum SMSType {
-        REGIST("register"), CHANGE_PASSWORD("changepwd");
-        private String type;
-
-        private SMSType(String type) {
-            this.type = type;
-        }
     }
 }

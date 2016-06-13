@@ -2,7 +2,7 @@ package com.jshs.mobile.banmen.Http;
 
 /**
  * Created by Administrator on 2015/12/31.
- * <p>
+ * <p/>
  * 请求URL资源
  */
 public class Domain {
@@ -13,4 +13,16 @@ public class Domain {
      * 获取短信验证码
      */
     public static final String GET_SMS_CODE = "common/getSms";
+    /**
+     * 注册
+     */
+    public static final String REGIST = "user/register";
+    /**
+     * 登录
+     */
+    public static final String LOGIN = "user/login";
+    /**
+     * 获取用户信息
+     */
+    public static final String GET_USER_INFO = "user/get_userinfo";
 }
