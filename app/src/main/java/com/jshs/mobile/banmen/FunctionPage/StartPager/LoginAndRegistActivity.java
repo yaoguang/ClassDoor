@@ -127,14 +127,14 @@ public class LoginAndRegistActivity extends BaseFragmentActivity implements Logi
     @Override
     public void showProgressDiaolog() {
         if (!isProgressDiaologShow()) {
-
+            // TODO: 2016/6/14  
         }
     }
 
     @Override
     public void hideProgressDiaolog() {
         if (isProgressDiaologShow()) {
-
+// TODO: 2016/6/14  
         }
     }
 }
