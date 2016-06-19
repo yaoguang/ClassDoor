@@ -33,7 +33,7 @@ public class UserUtils extends BaseModelUtil {
         return _userUtils;
     }
 
-    private User getUser() {
+    public User getUser() {
         if (_user == null) {
             _user = _dataBase.selectFrist(User.class);
         }
