@@ -1,15 +1,10 @@
 package com.jshs.mobile.banmen.ModelUtils;
 
 import com.jshs.mobile.banmen.BaseContent.BaseModelUtil;
-import com.jshs.mobile.banmen.Interfaces.DbCompleteListener;
 import com.jshs.mobile.banmen.Models.DataBase;
 import com.jshs.mobile.banmen.Models.User;
-import com.jshs.mobile.banmen.Tools.AsyncTask.SqlOperateSingleThread;
-import com.jshs.mobile.banmen.Tools.AsyncTask.ThreadSqlOperateUtil;
 
 import org.apache.http.util.TextUtils;
-import org.xutils.DbManager;
-import org.xutils.ex.DbException;
 
 /**
  * Created by Icezers on 2016/6/13.
@@ -44,7 +39,7 @@ public class UserUtils extends BaseModelUtil {
     }
 
     public boolean isLogin() {
-        return TextUtils.isEmpty(getUser().getToken());
+        return !TextUtils.isEmpty(getUser().getToken());
     }
 
     public void updateUser(User user) {

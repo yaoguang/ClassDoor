@@ -2,13 +2,9 @@ package com.jshs.mobile.banmen.Http;
 
 
 import com.android.volley.AuthFailureError;
-import com.android.volley.NetworkResponse;
-import com.android.volley.Request;
-import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.HttpHeaderParser;
 import com.jshs.mobile.banmen.BaseContent.BaseRequest;
 import com.jshs.mobile.banmen.Tools.MLOG_LEVEL;
 import com.jshs.mobile.banmen.Tools.MLog;
@@ -20,7 +16,7 @@ import java.util.Map;
 
 /**
  * Created by Administrator on 2015/12/31.
- * <p>
+ * <p/>
  * Request的Post请求模板
  */
 public abstract class PostRequest<T> extends BaseRequest<T> {
@@ -36,7 +32,7 @@ public abstract class PostRequest<T> extends BaseRequest<T> {
     protected ArrayList<String> mParamsList;
 
     public PostRequest(String url, Listener<T> listener, ErrorListener errorListener) {
-        super(Method.POST, Domain.ENDPOINT + url, errorListener);
+        super(Method.POST, url, errorListener);
         mListener = listener;
 
         addParams(mRequestArgs, mParamsList);

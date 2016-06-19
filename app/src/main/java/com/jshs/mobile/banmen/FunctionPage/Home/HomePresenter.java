@@ -13,41 +13,41 @@ import com.jshs.mobile.banmen.FunctionPage.ServicePager.ServiceFragment;
  */
 public class HomePresenter extends BasePresenter {
 
-	private HomeView _homeView;
+    private HomeView _homeView;
 
-	private HomePagerAdapter _pagerAdapter;
+    private HomePagerAdapter _pagerAdapter;
 
-	private ServiceFragment _serviceFragment;
-	private GalleryFragment _galleryFragment;
-	private IMFragment _imFragment;
-	private AbleManFragment _ableManFragment;
-	private MineFragment _mineFragment;
+    private ServiceFragment _serviceFragment;
+    private GalleryFragment _galleryFragment;
+    private IMFragment _imFragment;
+    private AbleManFragment _ableManFragment;
+    private MineFragment _mineFragment;
 
-	public HomePresenter(HomeView homeView) {
-		_homeView = homeView;
-	}
+    public HomePresenter(HomeView homeView) {
+        _homeView = homeView;
+    }
 
-	public void InitPagers() {
-		_serviceFragment = new ServiceFragment();
-		_galleryFragment = new GalleryFragment();
-		_imFragment = new IMFragment();
-		_ableManFragment = new AbleManFragment();
-		_mineFragment = new MineFragment();
-
-
-		_pagerAdapter = new HomePagerAdapter(_homeView.getHomeFragmentManager());
-		_pagerAdapter.addPager(_serviceFragment);
-		_pagerAdapter.addPager(_galleryFragment);
-		_pagerAdapter.addPager(_imFragment);
-		_pagerAdapter.addPager(_ableManFragment);
-		_pagerAdapter.addPager(_mineFragment);
-
-		_homeView.setPagerAdapter(_pagerAdapter);
-	}
+    public void InitPagers() {
+        _serviceFragment = new ServiceFragment();
+        _galleryFragment = new GalleryFragment();
+        _imFragment = new IMFragment();
+        _ableManFragment = new AbleManFragment();
+        _mineFragment = new MineFragment();
 
 
-	public void onPagerSelect(int position) throws Exception {
-		((BaseHomePager) _pagerAdapter.getItem(position)).onPagerSelect();
-	}
+        _pagerAdapter = new HomePagerAdapter(_homeView.getHomeFragmentManager());
+        _pagerAdapter.addPager(_serviceFragment);
+        _pagerAdapter.addPager(_galleryFragment);
+        _pagerAdapter.addPager(_imFragment);
+        _pagerAdapter.addPager(_ableManFragment);
+        _pagerAdapter.addPager(_mineFragment);
+
+        _homeView.setPagerAdapter(_pagerAdapter);
+    }
+
+
+    public void onPagerSelect(int position) throws Exception {
+        ((BaseHomePager) _pagerAdapter.getItem(position)).onPagerSelect();
+    }
 
 }

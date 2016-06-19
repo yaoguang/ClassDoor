@@ -7,7 +7,7 @@ public class ResultCodeConstants {
     /**
      * 请求成功
      */
-    public final static int SUCCESS = 200;
+    public final static int SUCCESS = 1;
 
     public static String getCodeMessage(int resultCode) {
         return "";

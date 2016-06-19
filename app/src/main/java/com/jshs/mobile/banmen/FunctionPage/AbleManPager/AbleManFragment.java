@@ -7,13 +7,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.jshs.mobile.banmen.BaseContent.BaseFragment;
 import com.jshs.mobile.banmen.BaseContent.BaseHomePager;
 import com.jshs.mobile.banmen.R;
 
 /**
  * Created by icezers on 16/6/8.
  */
-public class AbleManFragment extends BaseHomePager{
+public class AbleManFragment extends BaseFragment implements BaseHomePager{
 	View _rootView;
 
 	@Override
@@ -25,7 +26,7 @@ public class AbleManFragment extends BaseHomePager{
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-		_rootView=inflater.inflate(R.layout.mine_fragment, container, false);
+		_rootView=inflater.inflate(R.layout.demo_fragment, container, false);
 		return _rootView;
 	}
 }

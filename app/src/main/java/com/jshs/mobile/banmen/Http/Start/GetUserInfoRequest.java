@@ -6,7 +6,6 @@ import com.android.volley.toolbox.HttpHeaderParser;
 import com.jshs.mobile.banmen.Http.CodeError;
 import com.jshs.mobile.banmen.Http.Domain;
 import com.jshs.mobile.banmen.Http.GetRequest;
-import com.jshs.mobile.banmen.Http.PostRequest;
 import com.jshs.mobile.banmen.Models.User;
 import com.jshs.mobile.banmen.Tools.GsonUtils;
 
@@ -16,8 +15,8 @@ import java.io.UnsupportedEncodingException;
  * Created by SZH on 2016/6/12.
  */
 public class GetUserInfoRequest extends GetRequest<User> {
-    public GetUserInfoRequest(int uid, String token, Response.Listener<User> listener, Response.ErrorListener errorListener) {
-        super(Domain.GET_USER_INFO, listener, errorListener);
+    public GetUserInfoRequest(Response.Listener<User> listener, Response.ErrorListener errorListener) {
+        super(formatUserUrl(Domain.GET_USER_INFO), listener, errorListener);
     }
 
     @Override

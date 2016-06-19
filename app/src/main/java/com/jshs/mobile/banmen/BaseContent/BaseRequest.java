@@ -45,7 +45,7 @@ public abstract class BaseRequest<T> extends Request<T> {
     protected void setUserHeadParams() {
         if (UserUtils.getInstance().isLogin()) {
             Map<String, String> userParams = new HashMap<>();
-            userParams.put("uid", String.valueOf(UserUtils.getInstance().getUser().getUid()));
+//            userParams.put("uid", String.valueOf(UserUtils.getInstance().getUser().getUid()));
             userParams.put("token", UserUtils.getInstance().getUser().getToken());
         }
     }

@@ -7,7 +7,7 @@ package com.jshs.mobile.banmen.Http;
  */
 public class Domain {
     // 外网服务器地址
-    public static final String ENDPOINT = "http://banmen.hisan-web.com/index.php";
+    public static final String ENDPOINT = "http://banmen.hisan-web.com/index.php/app/";
 
     /**
      * 获取短信验证码

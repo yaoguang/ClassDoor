@@ -76,6 +76,8 @@ public final class AsyncHttp {
                 stringBuilder.append(entry.getKey()).append("=")
                         .append(entry.getValue());
             }
+        } else {
+            stringBuilder.append("?");
         }
         return stringBuilder.insert(0, requestUri).toString();
     }

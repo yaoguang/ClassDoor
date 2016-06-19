@@ -3,11 +3,10 @@ package com.jshs.mobile.banmen.Http;
 /**
  * Created by SZH on 2016/6/10.
  */
-public class Result<T> {
+public class Result {
     public int status;
     public String msg;
     public int code;
-    public T data;
 
     public boolean isSuccess(int... codes) {
         if (status == ResultCodeConstants.SUCCESS)
@@ -27,15 +26,5 @@ public class Result<T> {
 
     public Result getResult() {
         return this;
-    }
-
-    @Override
-    public String toString() {
-        return "Result{" +
-                "status=" + status +
-                ", msg='" + msg + '\'' +
-                ", code=" + code +
-                ", data=" + data +
-                '}';
     }
 }
