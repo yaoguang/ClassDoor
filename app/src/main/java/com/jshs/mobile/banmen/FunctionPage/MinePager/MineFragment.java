@@ -23,7 +23,7 @@ import java.util.ArrayList;
  */
 
 @ContentView(R.layout.mine_fragment)
-public class MineFragment extends XBaseFragment implements BaseHomePager, View.OnClickListener {
+public class MineFragment extends BaseHomePager implements View.OnClickListener {
 
     private SimpleDraweeView headIcon;
     private TextView nickName;

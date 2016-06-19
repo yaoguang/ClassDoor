@@ -14,7 +14,7 @@ import com.jshs.mobile.banmen.R;
 /**
  * Created by icezers on 16/6/8.
  */
-public class ServiceFragment extends BaseFragment implements BaseHomePager {
+public class ServiceFragment extends BaseHomePager {
     View _rootView;
 
     @Override

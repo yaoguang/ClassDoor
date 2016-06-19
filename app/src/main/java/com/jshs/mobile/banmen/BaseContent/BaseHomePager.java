@@ -3,8 +3,8 @@ package com.jshs.mobile.banmen.BaseContent;
 /**
  * Created by icezers on 16/6/8.
  */
-public interface BaseHomePager {
+public abstract class BaseHomePager extends XBaseFragment {
 
-    public void onPagerSelect();
+    public abstract void onPagerSelect();
 
 }

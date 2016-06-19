@@ -18,4 +18,6 @@ public interface LoginAndRegistView extends BaseLayer {
     void showProgressDiaolog();
 
     void hideProgressDiaolog();
+
+    void onLoginSuccess();
 }

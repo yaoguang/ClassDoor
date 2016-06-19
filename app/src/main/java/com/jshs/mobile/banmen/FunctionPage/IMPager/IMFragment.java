@@ -14,7 +14,7 @@ import com.jshs.mobile.banmen.R;
 /**
  * Created by icezers on 16/6/8.
  */
-public class IMFragment extends BaseFragment implements BaseHomePager {
+public class IMFragment extends BaseHomePager {
 
     View _rootView;
 

@@ -6,6 +6,7 @@ import android.widget.Toast;
 import com.jshs.mobile.banmen.BaseContent.BasePresenter;
 import com.jshs.mobile.banmen.BaseContent.EventCenter;
 import com.jshs.mobile.banmen.Events.LoginSuccessEvent;
+import com.jshs.mobile.banmen.ModelUtils.UserUtils;
 
 /**
  * Created by Icezers on 2016/6/14.
@@ -18,6 +19,9 @@ public class LoginAndRegistPresenter extends BasePresenter implements LoginAndRe
     public LoginAndRegistPresenter(LoginAndRegistView view) {
         this.model = new LoginAndRegistModel();
         this.view = view;
+        if (UserUtils.getInstance().isLogin()) {
+            view.onLoginSuccess();
+        }
     }
 
     public void onDestry() {
@@ -99,6 +103,8 @@ public class LoginAndRegistPresenter extends BasePresenter implements LoginAndRe
     @Override
     public void onRequestUserInfoSuccess() {
         EventCenter.post(new LoginSuccessEvent());
+        view.showToast("登录成功");
+        view.onLoginSuccess();
         view.hideProgressDiaolog();
     }
 

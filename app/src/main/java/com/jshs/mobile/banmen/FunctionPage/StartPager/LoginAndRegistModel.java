@@ -83,6 +83,7 @@ public class LoginAndRegistModel extends BaseManager {
         AsyncHttp.getInstance().addRequest(new GetUserInfoRequest(new Response.Listener<User>() {
             @Override
             public void onResponse(User response) {
+                UserUtils.getInstance().updateUser(response);
                 if (listener != null) {
                     listener.onRequestUserInfoSuccess();
                 }

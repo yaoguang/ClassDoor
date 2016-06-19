@@ -1,5 +1,6 @@
 package com.jshs.mobile.banmen.FunctionPage.StartPager;
 
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -11,6 +12,7 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.jshs.mobile.banmen.BaseContent.BaseFragmentActivity;
+import com.jshs.mobile.banmen.FunctionPage.Home.HomeActivity;
 import com.jshs.mobile.banmen.R;
 
 import org.xutils.view.annotation.ContentView;
@@ -41,7 +43,6 @@ public class LoginAndRegistActivity extends BaseFragmentActivity implements Logi
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         x.view().inject(this);
         presenter = new LoginAndRegistPresenter(this);
         initDates();
@@ -130,5 +131,11 @@ public class LoginAndRegistActivity extends BaseFragmentActivity implements Logi
         if (isProgressDiaologShow()) {
             // TODO: 2016/6/14
         }
+    }
+
+    @Override
+    public void onLoginSuccess() {
+        startActivity(new Intent(LoginAndRegistActivity.this, HomeActivity.class));
+        finish();
     }
 }
