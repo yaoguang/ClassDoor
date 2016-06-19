@@ -25,4 +25,8 @@ public class Domain {
      * 获取用户信息
      */
     public static final String GET_USER_INFO = "user/get_userinfo";
+    /**
+     * 获取用户信息
+     */
+    public static final String GET_CATEGORY_LIST = "category/get_category_list";
 }

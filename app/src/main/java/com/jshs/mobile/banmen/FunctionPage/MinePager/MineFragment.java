@@ -3,13 +3,13 @@ package com.jshs.mobile.banmen.FunctionPage.MinePager;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
+import android.text.style.UpdateAppearance;
 import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jshs.mobile.banmen.BaseContent.BaseHomePager;
 import com.jshs.mobile.banmen.BaseContent.XBaseFragment;
-import com.jshs.mobile.banmen.FunctionPage.StartPager.LoginAndRegistActivity;
 import com.jshs.mobile.banmen.ModelUtils.UserUtils;
 import com.jshs.mobile.banmen.Models.User;
 import com.jshs.mobile.banmen.R;
@@ -53,7 +53,7 @@ public class MineFragment extends XBaseFragment implements BaseHomePager, View.O
             view.setOnClickListener(this);
             view.setTag(i);
         }
-        targetAcitivitys.add(LoginAndRegistActivity.class);
+        targetAcitivitys.add(UpgradeSupplierActivity.class);
     }
 
     @Override
