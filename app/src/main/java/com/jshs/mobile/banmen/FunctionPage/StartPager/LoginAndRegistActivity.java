@@ -11,14 +11,8 @@ import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.jshs.mobile.banmen.BaseContent.BaseFragmentActivity;
-import com.jshs.mobile.banmen.Models.DataBase;
-import com.jshs.mobile.banmen.Models.User;
 import com.jshs.mobile.banmen.R;
-import com.jshs.mobile.banmen.Tools.MLOG_LEVEL;
-import com.jshs.mobile.banmen.Tools.MLog;
 
-import org.xutils.DbManager;
-import org.xutils.ex.DbException;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
@@ -127,14 +121,14 @@ public class LoginAndRegistActivity extends BaseFragmentActivity implements Logi
     @Override
     public void showProgressDiaolog() {
         if (!isProgressDiaologShow()) {
-            // TODO: 2016/6/14  
+            // TODO: 2016/6/14
         }
     }
 
     @Override
     public void hideProgressDiaolog() {
         if (isProgressDiaologShow()) {
-// TODO: 2016/6/14  
+            // TODO: 2016/6/14
         }
     }
 }
