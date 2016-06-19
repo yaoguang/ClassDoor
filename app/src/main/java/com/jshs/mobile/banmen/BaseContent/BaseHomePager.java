@@ -6,5 +6,4 @@ package com.jshs.mobile.banmen.BaseContent;
 public abstract class BaseHomePager extends XBaseFragment {
 
     public abstract void onPagerSelect();
-
 }

@@ -2,6 +2,7 @@ package com.jshs.mobile.banmen.BaseContent;
 
 import android.app.Application;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
 import com.jshs.mobile.banmen.Http.AsyncHttp;
 import com.jshs.mobile.banmen.Models.DataBase;
 import com.jshs.mobile.banmen.Tools.ScreenUtils;
@@ -40,6 +41,7 @@ public class BaseApplication extends Application {
         ScreenUtils.setContext(this);
         x.Ext.init(this);
         x.Ext.setDebug(true);
+        Fresco.initialize(this);
     }
 
     public String TAG() {

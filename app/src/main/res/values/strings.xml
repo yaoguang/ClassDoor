@@ -2,4 +2,5 @@
     <string name="app_name">班门</string>
     <string name="login">登录</string>
     <string name="regist">注册</string>
+    <string name="add_attention">+加关注</string>
 </resources>

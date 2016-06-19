@@ -47,6 +47,11 @@
         <activity android:name=".FunctionPage.StartPager.LoginAndRegistActivity" />
         <activity android:name=".FunctionPage.Home.HomeActivity" />
         <activity android:name=".FunctionPage.MinePager.UpgradeSupplierActivity" />
+        <activity android:name=".FunctionPage.MinePager.MineInfoActivity" />
+        <activity android:name=".FunctionPage.MinePager.SetActivity" />
+        <activity android:name=".FunctionPage.MinePager.MineCollectActivity" />
+        <activity android:name=".FunctionPage.MinePager.MineDownloadActivity" />
+        <activity android:name=".FunctionPage.MinePager.MineFansActivity" />
     </application>
 
 </manifest>

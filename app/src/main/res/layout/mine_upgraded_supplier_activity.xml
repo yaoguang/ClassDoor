@@ -24,11 +24,14 @@
                 android:paddingRight="20dp"
                 android:paddingTop="15dp">
 
-                <com.jshs.mobile.banmen.UIComponents.CircleImageView
-                    android:id="@+id/icon"
+                <com.facebook.drawee.view.SimpleDraweeView xmlns:app="http://schemas.android.com/apk/res-auto"
+                    android:id="@+id/head_icon"
                     android:layout_width="70dp"
                     android:layout_height="70dp"
-                    android:src="@drawable/repair_house" />
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    app:placeholderImage="@drawable/repair_house"
+                    app:roundAsCircle="true" />
 
                 <TextView
                     android:id="@+id/name"
@@ -266,6 +269,7 @@
                 android:id="@+id/submit"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
                 android:layout_marginLeft="30dp"
                 android:layout_marginRight="30dp"
                 android:layout_marginTop="20dp"

@@ -3,13 +3,11 @@ package com.jshs.mobile.banmen.FunctionPage.MinePager;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.TextUtils;
-import android.text.style.UpdateAppearance;
 import android.view.View;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
 import com.jshs.mobile.banmen.BaseContent.BaseHomePager;
-import com.jshs.mobile.banmen.BaseContent.XBaseFragment;
 import com.jshs.mobile.banmen.ModelUtils.UserUtils;
 import com.jshs.mobile.banmen.Models.User;
 import com.jshs.mobile.banmen.R;
@@ -54,11 +52,21 @@ public class MineFragment extends BaseHomePager implements View.OnClickListener 
             view.setTag(i);
         }
         targetAcitivitys.add(UpgradeSupplierActivity.class);
+        targetAcitivitys.add(SetActivity.class);
+        targetAcitivitys.add(MineInfoActivity.class);
+        targetAcitivitys.add(UpgradeSupplierActivity.class);
+        targetAcitivitys.add(UpgradeSupplierActivity.class);
+        targetAcitivitys.add(UpgradeSupplierActivity.class);
+        targetAcitivitys.add(MineCollectActivity.class);
+        targetAcitivitys.add(MineFansActivity.class);
+        targetAcitivitys.add(MineDownloadActivity.class);
     }
 
     @Override
     public void initAction() {
-        refreshUserUI();
+        headIcon.setImageURI(Uri.parse("http://i2.hdslb.com/bfs/face/7c3fe391deb34e8b6f72794474ecad69c5c39494.jpg"));
+
+//        refreshUserUI();
     }
 
     private void refreshUserUI() {

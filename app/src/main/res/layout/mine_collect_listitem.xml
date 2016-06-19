@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="@color/white"
+    android:padding="15dp">
+
+    <com.facebook.drawee.view.SimpleDraweeView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:scaleType="fitCenter"
+        app:placeholderImage="@drawable/repair_house"
+        app:viewAspectRatio="1.2" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_toLeftOf="@+id/indicate"
+        android:layout_toRightOf="@+id/icon"
+        android:singleLine="true"
+        android:text="建材市场圣诞节哈斯卡活动"
+        android:textColor="@color/default_text_color"
+        android:textSize="14sp" />
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/title"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@+id/indicate"
+        android:maxLines="2"
+        android:text="s送大奖是大家看见俺还是靠大家爱看说得好时间和贷款及安徽师大啥叫哈伦裤大坏蛋"
+        android:textColor="@color/default_text_middle_color"
+        android:textSize="13sp" />
+
+    <ImageView
+        android:id="@+id/indicate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/community_disclosure" />
+
+</RelativeLayout>
