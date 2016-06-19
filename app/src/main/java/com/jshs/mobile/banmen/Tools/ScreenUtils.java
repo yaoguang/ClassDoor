@@ -50,6 +50,10 @@ public class ScreenUtils {
     }
 
 
+    public static ScreenUtils getInstance() {
+        return mInstance;
+    }
+
     /**
      * 获得屏幕宽度
      */

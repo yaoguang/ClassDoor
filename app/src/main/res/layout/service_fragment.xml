@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cube_ptr="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/status_bar_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_bar_height"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="@dimen/title_img_width"
+            android:layout_height="@dimen/title_bar_height" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_bar_height"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:text="分类"
+            android:textColor="@color/title_text_color"
+            android:textSize="@dimen/title_text_size" />
+    </RelativeLayout>
+
+    <com.jshs.mobile.banmen.UIComponents.LineView
+        android:layout_width="match_parent"
+        android:layout_height="1px" />
+
+
+    <ListView
+        android:id="@+id/service_listview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/cutting_line"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/soild_edittext_bg"
+            android:hint="请输入产品名称"
+            android:padding="3dp"
+            android:textColor="#655f5f"
+            android:textColorHint="#aaaaaa"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/soild_arc_red_button"
+            android:gravity="center"
+            android:text="搜索"
+            android:textColor="#ffffff"
+            android:textSize="16dp" />
+
+    </LinearLayout>
+</LinearLayout>
