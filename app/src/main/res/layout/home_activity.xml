@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context=".FunctionPage.Home.HomeActivity">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FunctionPage.Home.HomeActivity">
 
     <LinearLayout
         android:id="@+id/home_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:orientation="horizontal">
+        android:background="@color/title_back"
+        android:orientation="horizontal"
+        android:paddingTop="3dp">
 
         <LinearLayout
             android:id="@+id/home_bar_layout_item1"
@@ -22,12 +24,14 @@
 
             <ImageView
                 android:layout_width="30dp"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp"
+                android:background="@color/button_red"
+                android:src="@drawable/repair_house" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="服务"/>
+                android:text="服务" />
         </LinearLayout>
 
         <LinearLayout
@@ -40,12 +44,13 @@
 
             <ImageView
                 android:layout_width="30dp"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp"
+                android:src="@drawable/repair_house" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="图库"/>
+                android:text="图库" />
         </LinearLayout>
 
         <LinearLayout
@@ -58,12 +63,13 @@
 
             <ImageView
                 android:layout_width="30dp"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp"
+                android:src="@drawable/repair_house" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="IM"/>
+                android:text="IM" />
         </LinearLayout>
 
         <LinearLayout
@@ -76,12 +82,13 @@
 
             <ImageView
                 android:layout_width="30dp"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp"
+                android:src="@drawable/repair_house" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="牛人"/>
+                android:text="牛人" />
         </LinearLayout>
 
         <LinearLayout
@@ -94,12 +101,13 @@
 
             <ImageView
                 android:layout_width="30dp"
-                android:layout_height="30dp"/>
+                android:layout_height="30dp"
+                android:src="@drawable/repair_house" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="我的"/>
+                android:text="我的" />
         </LinearLayout>
 
     </LinearLayout>
@@ -107,11 +115,11 @@
     <com.jshs.mobile.banmen.UIComponents.LineView
         android:layout_width="match_parent"
         android:layout_height="1px"
-        android:layout_above="@+id/home_bar_layout"/>
+        android:layout_above="@+id/home_bar_layout" />
 
     <android.support.v4.view.ViewPager
         android:id="@+id/home_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/home_bar_layout"/>
+        android:layout_above="@+id/home_bar_layout" />
 </RelativeLayout>
