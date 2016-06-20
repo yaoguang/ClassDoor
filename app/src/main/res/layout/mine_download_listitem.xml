@@ -11,7 +11,7 @@
         android:layout_height="50dp"
         android:layout_centerVertical="true"
         android:scaleType="fitCenter"
-        app:placeholderImage="@drawable/file_icon" />
+        app:placeholderImage="@drawable/iconfont_document" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -6,7 +6,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.LinearLayout;
 
 import com.jshs.mobile.banmen.BaseContent.BaseFragmentActivity;
 import com.jshs.mobile.banmen.R;
@@ -14,35 +13,39 @@ import com.jshs.mobile.banmen.Tools.MLOG_LEVEL;
 import com.jshs.mobile.banmen.Tools.MLog;
 
 import org.xutils.view.annotation.ContentView;
-import org.xutils.view.annotation.Event;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
+
+import java.util.ArrayList;
 
 ;
 
 
 @ContentView(R.layout.home_activity)
-public class HomeActivity extends BaseFragmentActivity implements HomeView {
+public class HomeActivity extends BaseFragmentActivity implements HomeView, View.OnClickListener {
 
 
     @ViewInject(R.id.home_viewpager)
     public ViewPager _viewPager;
 
-    @ViewInject(R.id.home_bar_layout_item1)
-    public LinearLayout _homeBarItem1;
+    @ViewInject(R.id.home_bar_item1)
+    public View _homeBarItem1;
 
-    @ViewInject(R.id.home_bar_layout_item2)
-    public LinearLayout _homeBarItem2;
+    @ViewInject(R.id.home_bar_item2)
+    public View _homeBarItem2;
 
-    @ViewInject(R.id.home_bar_layout_item3)
-    public LinearLayout _homeBarItem3;
+    @ViewInject(R.id.home_bar_item3)
+    public View _homeBarItem3;
 
-    @ViewInject(R.id.home_bar_layout_item4)
-    public LinearLayout _homeBarItem4;
+    @ViewInject(R.id.home_bar_item4)
+    public View _homeBarItem4;
 
-    @ViewInject(R.id.home_bar_layout_item5)
-    public LinearLayout _homeBarItem5;
+    @ViewInject(R.id.home_bar_item5)
+    public View _homeBarItem5;
 
+
+    private int[] barItemIds = {R.id.home_bar_item1, R.id.home_bar_item2, R.id.home_bar_item3, R.id.home_bar_item4, R.id.home_bar_item5};
+    private ArrayList<View> barItems = new ArrayList<>();
 
     private HomePresenter _presenter;
 
@@ -53,27 +56,27 @@ public class HomeActivity extends BaseFragmentActivity implements HomeView {
         _presenter = new HomePresenter(this);
         _presenter.InitPagers();
 
+        for (int i = 0; i < barItemIds.length; i++) {
+            View view = findViewById(barItemIds[i]);
+            view.setTag(i);
+            view.setOnClickListener(this);
+            barItems.add(view);
+        }
     }
 
 
-    @Event(value = {R.id.home_bar_layout_item1, R.id.home_bar_layout_item2, R.id.home_bar_layout_item3, R.id.home_bar_layout_item4, R.id.home_bar_layout_item5})
-    private void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.home_bar_layout_item1:
-                _viewPager.setCurrentItem(0);
-                break;
-            case R.id.home_bar_layout_item2:
-                _viewPager.setCurrentItem(1);
-                break;
-            case R.id.home_bar_layout_item3:
-                _viewPager.setCurrentItem(2);
-                break;
-            case R.id.home_bar_layout_item4:
-                _viewPager.setCurrentItem(3);
-                break;
-            case R.id.home_bar_layout_item5:
-                _viewPager.setCurrentItem(4);
-                break;
+    public void onClick(View view) {
+        _viewPager.setCurrentItem((int) view.getTag());
+    }
+
+    private void selectPager(int position) {
+        for (int i = 0; i < barItems.size(); i++) {
+            barItems.get(i).setSelected(position == i);
+        }
+        try {
+            _presenter.onPagerSelect(position);
+        } catch (Exception e) {
+            MLog.print(TAG(), MLOG_LEVEL.E, e.toString());
         }
     }
 
@@ -93,11 +96,7 @@ public class HomeActivity extends BaseFragmentActivity implements HomeView {
 
             @Override
             public void onPageSelected(int position) {
-                try {
-                    _presenter.onPagerSelect(position);
-                } catch (Exception e) {
-                    MLog.print(TAG(), MLOG_LEVEL.E, e.toString());
-                }
+                selectPager(position);
             }
 
             @Override
@@ -109,7 +108,7 @@ public class HomeActivity extends BaseFragmentActivity implements HomeView {
             @Override
             public void run() {
                 try {
-                    _presenter.onPagerSelect(0);
+                    selectPager(0);
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

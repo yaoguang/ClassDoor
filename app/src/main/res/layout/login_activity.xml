@@ -5,45 +5,58 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.jshs.mobile.banmen.UIComponents.AutoView.AutoAdjustHeightImageView
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/login_back"
-        app:iv_height_ratio="1.5" />
+        android:layout_height="match_parent"
+        android:scrollbars="none">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/login"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/selector_draw_login_pagertag"
-            android:gravity="center"
-            android:text="@string/login"
-            android:textColor="@drawable/selector_color_gray"
-            android:textSize="17sp" />
+            <com.jshs.mobile.banmen.UIComponents.AutoView.AutoAdjustHeightImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/login_title"
+                app:iv_height_ratio="1.48" />
 
-        <TextView
-            android:id="@+id/regist"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="1"
-            android:background="@drawable/selector_draw_login_pagertag"
-            android:gravity="center"
-            android:text="@string/regist"
-            android:textColor="@drawable/selector_color_gray"
-            android:textSize="17sp" />
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="horizontal">
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"></android.support.v4.view.ViewPager>
+                <TextView
+                    android:id="@+id/login"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_draw_login_pagertag"
+                    android:gravity="center"
+                    android:text="@string/login"
+                    android:textColor="@drawable/selector_color_gray"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/regist"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/selector_draw_login_pagertag"
+                    android:gravity="center"
+                    android:text="@string/regist"
+                    android:textColor="@drawable/selector_color_gray"
+                    android:textSize="17sp" />
+            </LinearLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"></android.support.v4.view.ViewPager>
+        </LinearLayout>
+
+    </ScrollView>
 
 </LinearLayout>
