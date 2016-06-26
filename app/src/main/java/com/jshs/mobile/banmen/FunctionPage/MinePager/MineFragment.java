@@ -11,6 +11,7 @@ import com.jshs.mobile.banmen.BaseContent.BaseHomePager;
 import com.jshs.mobile.banmen.ModelUtils.UserUtils;
 import com.jshs.mobile.banmen.Models.User;
 import com.jshs.mobile.banmen.R;
+import com.jshs.mobile.banmen.Tools.TitleHolder;
 
 import org.xutils.view.annotation.ContentView;
 
@@ -21,7 +22,7 @@ import java.util.ArrayList;
  */
 
 @ContentView(R.layout.mine_fragment)
-public class MineFragment extends BaseHomePager implements View.OnClickListener {
+public class MineFragment extends BaseHomePager implements View.OnClickListener, TitleHolder.TitleBtnClick {
 
     private SimpleDraweeView headIcon;
     private TextView nickName;
@@ -42,6 +43,9 @@ public class MineFragment extends BaseHomePager implements View.OnClickListener 
     @Override
     public void initViews() {
         assignViews();
+
+        titleHolder = new TitleHolder(getActivity(), getContent(), R.string.mine);
+        titleHolder.initBtns(R.drawable.iconfont_setting, R.drawable.iconfont_remind, this);
     }
 
     @Override
@@ -103,6 +107,16 @@ public class MineFragment extends BaseHomePager implements View.OnClickListener 
 
     @Override
     public void onPagerSelect() {
+
+    }
+
+    @Override
+    public void onLeftBtnClick(View view) {
+        startActivity(new Intent(getActivity(), SetActivity.class));
+    }
+
+    @Override
+    public void onRightBtnClick(View view) {
 
     }
 }

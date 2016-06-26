@@ -3,4 +3,22 @@
     <string name="login">登录</string>
     <string name="regist">注册</string>
     <string name="add_attention">+加关注</string>
+    <string name="add">添加</string>
+    <string name="home_pager_title">班门</string>
+    <string name="able_man">牛人</string>
+    <string name="friend_card">好友名片</string>
+    <string name="look_around">附近牛人</string>
+    <string name="my_cardcase">我的名片夹</string>
+    <string name="net_user_fei">查看牛人资料</string>
+    <string name="new_ableman">新的牛人</string>
+    <string name="same_friend">共同好友</string>
+    <string name="search_anleman">查找牛人</string>
+    <string name="search_result">查找结果</string>
+    <string name="my_collect">我的收藏</string>
+    <string name="mine">我的</string>
+    <string name="mine_info">我的资料</string>
+    <string name="set">设置</string>
+    <string name="upgrade_supplier">升级为供应商</string>
+    <string name="my_download">我的下载</string>
+    <string name="my_fans">我的粉丝</string>
 </resources>

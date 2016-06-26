@@ -52,6 +52,14 @@
         <activity android:name=".FunctionPage.MinePager.MineCollectActivity" />
         <activity android:name=".FunctionPage.MinePager.MineDownloadActivity" />
         <activity android:name=".FunctionPage.MinePager.MineFansActivity" />
+        <activity android:name=".FunctionPage.AbleManPager.LookAroundActivity" />
+        <activity android:name=".FunctionPage.AbleManPager.NetUserFeiActivity" />
+        <activity android:name=".FunctionPage.AbleManPager.BusinessCardActivity" />
+        <activity android:name=".FunctionPage.AbleManPager.MineCardcaseActivity" />
+        <activity android:name=".FunctionPage.AbleManPager.NewAnleManActivity" />
+        <activity android:name=".FunctionPage.AbleManPager.SameFriendActivity" />
+        <activity android:name=".FunctionPage.AbleManPager.SearchAbleManActivity" />
+        <activity android:name=".FunctionPage.AbleManPager.SearchResultActivity" />
     </application>
 
 </manifest>

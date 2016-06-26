@@ -1,12 +1,12 @@
-package com.jshs.mobile.banmen.FunctionPage.MinePager;
+package com.jshs.mobile.banmen.FunctionPage.AbleManPager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -15,22 +15,25 @@ import com.jshs.mobile.banmen.R;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MineCollectAdapter<T> extends BaseAdapter {
+public class BaseUserinfoAdapter<T> extends BaseAdapter {
 
     private List<T> datas = new ArrayList<>();
 
     private Context context;
     private LayoutInflater layoutInflater;
+    private String actionContent;
 
-    public MineCollectAdapter(Context context) {
+    public BaseUserinfoAdapter(Context context, String actionContent) {
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
+        this.actionContent = actionContent;
     }
 
-    public MineCollectAdapter(Context context, List<T> datas) {
+    public BaseUserinfoAdapter(Context context, String actionContent, List<T> datas) {
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
         this.datas = datas;
+        this.actionContent = actionContent;
     }
 
     public void setDatas(List<T> datas) {
@@ -57,7 +60,7 @@ public class MineCollectAdapter<T> extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.mine_collect_listitem, parent, false);
+            convertView = layoutInflater.inflate(R.layout.base_userinfo_listitem, parent, false);
             holder = new ViewHolder(convertView);
             convertView.setTag(holder);
         } else {
@@ -73,6 +76,7 @@ public class MineCollectAdapter<T> extends BaseAdapter {
     }
 
     private void onItemClick(View convertView, T data, ViewHolder holder, int position) {
+        context.startActivity(new Intent(context, NetUserFeiActivity.class));
     }
 
     private View.OnClickListener onItemClickListener = new View.OnClickListener() {
@@ -87,18 +91,25 @@ public class MineCollectAdapter<T> extends BaseAdapter {
 
     protected class ViewHolder {
         private SimpleDraweeView icon;
-        private TextView title;
+        private TextView name;
         private TextView content;
-        private ImageView indicate;
+        private TextView action;
         private int position;
 
         public ViewHolder(View view) {
             icon = (SimpleDraweeView) view.findViewById(R.id.icon);
-            title = (TextView) view.findViewById(R.id.title);
+            name = (TextView) view.findViewById(R.id.name);
             content = (TextView) view.findViewById(R.id.content);
-            indicate = (ImageView) view.findViewById(R.id.indicate);
+            action = (TextView) view.findViewById(R.id.action);
 
-            icon.setImageURI(Uri.parse("http://i0.hdslb.com/group1/M00/F8/74/oYYBAFalnWiAK11uAAFokC-kBKE898.jpg"));
+            if (actionContent == null) {
+                action.setVisibility(View.GONE);
+            } else {
+                action.setVisibility(View.VISIBLE);
+                action.setText(actionContent);
+            }
+
+            icon.setImageURI(Uri.parse("http://i2.hdslb.com/bfs/face/7c3fe391deb34e8b6f72794474ecad69c5c39494.jpg"));
         }
     }
 }

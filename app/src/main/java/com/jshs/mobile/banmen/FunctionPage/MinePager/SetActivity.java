@@ -1,25 +1,23 @@
 package com.jshs.mobile.banmen.FunctionPage.MinePager;
 
-import android.os.Bundle;
 import android.view.View;
 
-import com.jshs.mobile.banmen.BaseContent.BaseActivity;
+import com.jshs.mobile.banmen.BaseContent.XBaseActivity;
 import com.jshs.mobile.banmen.R;
+import com.jshs.mobile.banmen.Tools.TitleHolder;
 
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.Event;
-import org.xutils.x;
 
 /**
  * Created by SZH on 2016/6/19.
  */
 @ContentView(R.layout.set_activity)
-public class SetActivity extends BaseActivity {
+public class SetActivity extends XBaseActivity {
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        x.view().inject(this);
+    protected void initViews() {
+        titleHolder = TitleHolder.initSimpleTitle(this, R.string.set);
     }
 
     @Event(value = {R.id.user_info, R.id.password, R.id.phone, R.id.clear_cache, R.id.about, R.id.notescontact, R.id.login_out})

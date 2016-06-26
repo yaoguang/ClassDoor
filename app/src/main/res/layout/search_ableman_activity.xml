@@ -6,70 +6,34 @@
 
     <include layout="@layout/title_item" />
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingBottom="15dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp"
-        android:paddingTop="15dp">
-
-
-        <com.facebook.drawee.view.SimpleDraweeView xmlns:app="http://schemas.android.com/apk/res-auto"
-            android:id="@+id/head_icon"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            app:placeholderImage="@drawable/repair_house"
-            app:roundAsCircle="true" />
-
-        <TextView
-            android:id="@+id/nickname"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="85dp"
-            android:singleLine="true"
-            android:text="Vjidsiahhh"
-            android:textColor="@color/default_text_color"
-            android:textSize="@dimen/default_my_text_size" />
-    </RelativeLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1px"
-        android:background="@color/cutting_line" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/my_menu_item_height"
-        android:layout_marginTop="10dp"
         android:background="@color/white"
         android:orientation="horizontal"
         android:paddingLeft="15dp"
         android:paddingRight="15dp">
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="75dp"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="姓名："
-            android:textColor="@color/default_text_light_color"
+            android:gravity="center_vertical|right"
+            android:text="实名"
+            android:textColor="@color/default_text_color"
             android:textSize="@dimen/default_my_text_size" />
 
         <EditText
             android:id="@+id/name"
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:background="@null"
             android:gravity="center_vertical"
+            android:hint="请输入真实姓名"
             android:singleLine="true"
-            android:text="张正"
             android:textColor="@color/default_text_color"
+            android:textColorHint="@color/default_text_light_color"
             android:textSize="@dimen/default_my_text_size" />
 
     </LinearLayout>
@@ -88,16 +52,55 @@
         android:paddingRight="15dp">
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="75dp"
             android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="班门号"
+            android:textColor="@color/default_text_color"
+            android:textSize="@dimen/default_my_text_size" />
+
+        <EditText
+            android:id="@+id/number"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_weight="1"
+            android:background="@null"
             android:gravity="center_vertical"
-            android:text="性别："
-            android:textColor="@color/default_text_light_color"
+            android:hint="请输入班门号"
+            android:singleLine="true"
+            android:textColor="@color/default_text_color"
+            android:textColorHint="@color/default_text_light_color"
+            android:textSize="@dimen/default_my_text_size" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/cutting_line" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/my_menu_item_height"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp">
+
+
+        <TextView
+            android:layout_width="75dp"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical|right"
+            android:text="性别"
+            android:textColor="@color/default_text_color"
             android:textSize="@dimen/default_my_text_size" />
 
         <RadioGroup
             android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
@@ -159,24 +162,19 @@
         android:paddingRight="15dp">
 
         <TextView
-            android:layout_width="95dp"
+            android:layout_width="75dp"
             android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="生日："
-            android:textColor="@color/default_text_light_color"
-            android:textSize="@dimen/default_my_text_size" />
-
-        <TextView
-            android:id="@+id/birthday"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:text="1990.1.10"
+            android:gravity="center_vertical|right"
+            android:text="所在地"
             android:textColor="@color/default_text_color"
             android:textSize="@dimen/default_my_text_size" />
+
+        <LinearLayout
+            android:id="@+id/adress_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:orientation="horizontal"></LinearLayout>
 
     </LinearLayout>
 
@@ -187,31 +185,27 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/my_menu_item_height"
+        android:layout_height="wrap_content"
         android:background="@color/white"
         android:orientation="horizontal"
         android:paddingLeft="15dp"
         android:paddingRight="15dp">
 
         <TextView
-            android:layout_width="95dp"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="个性签名："
-            android:textColor="@color/default_text_light_color"
-            android:textSize="@dimen/default_my_text_size" />
-
-        <EditText
-            android:id="@+id/personalized_signature"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:text="暂无签名"
+            android:layout_width="75dp"
+            android:layout_height="@dimen/my_menu_item_height"
+            android:gravity="center_vertical|right"
+            android:text="职业类型"
             android:textColor="@color/default_text_color"
             android:textSize="@dimen/default_my_text_size" />
+
+        <LinearLayout
+            android:id="@+id/pro_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:minHeight="@dimen/my_menu_item_height"
+            android:orientation="horizontal"></LinearLayout>
 
     </LinearLayout>
 
@@ -220,32 +214,33 @@
         android:layout_height="1px"
         android:background="@color/cutting_line" />
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/search"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/my_menu_item_height"
-        android:background="@color/white"
-        android:orientation="horizontal"
-        android:paddingLeft="15dp"
-        android:paddingRight="15dp">
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/soild_arc_red_button"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="搜索"
+        android:textColor="@color/white"
+        android:textSize="@dimen/default_my_text_size" />
 
-        <TextView
-            android:layout_width="95dp"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:text="联系电话："
-            android:textColor="@color/default_text_light_color"
-            android:textSize="@dimen/default_my_text_size" />
-
-        <EditText
-            android:id="@+id/phone"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="@null"
-            android:gravity="center_vertical"
-            android:singleLine="true"
-            android:text="1323451325"
-            android:textColor="@color/default_text_color"
-            android:textSize="@dimen/default_my_text_size" />
-    </LinearLayout>
+    <TextView
+        android:id="@+id/add_to_link"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/soild_frame_arc_white"
+        android:gravity="center"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:text="导入通讯录"
+        android:textColor="@color/default_text_color"
+        android:textSize="@dimen/default_my_text_size" />
 </LinearLayout>

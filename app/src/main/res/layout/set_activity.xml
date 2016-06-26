@@ -4,6 +4,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <include layout="@layout/title_item" />
+
     <LinearLayout
         android:id="@+id/user_info"
         android:layout_width="match_parent"

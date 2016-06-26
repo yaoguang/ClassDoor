@@ -15,7 +15,7 @@ import java.util.List;
 
 public class MineDownloadAdapter<T> extends BaseAdapter {
 
-    private List<T> objects = new ArrayList<T>();
+    private List<T> datas = new ArrayList<>();
 
     private Context context;
     private LayoutInflater layoutInflater;
@@ -28,17 +28,22 @@ public class MineDownloadAdapter<T> extends BaseAdapter {
     public MineDownloadAdapter(Context context, List<T> datas) {
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
-        this.objects = datas;
+        this.datas = datas;
+    }
+
+    public void setDatas(List<T> datas) {
+        this.datas = datas;
+        notifyDataSetChanged();
     }
 
     @Override
     public int getCount() {
-        return objects.size();
+        return datas == null ? 0 : datas.size();
     }
 
     @Override
     public T getItem(int position) {
-        return objects.get(position);
+        return datas.get(position);
     }
 
     @Override
@@ -48,22 +53,41 @@ public class MineDownloadAdapter<T> extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder = null;
         if (convertView == null) {
-            convertView = layoutInflater.inflate(R.layout.mine_download_listitem, null);
-            convertView.setTag(new ViewHolder(convertView));
+            convertView = layoutInflater.inflate(R.layout.mine_download_listitem, parent, false);
+            holder = new ViewHolder(convertView);
+            convertView.setTag(holder);
+        } else {
+            holder = (ViewHolder) convertView.getTag();
         }
-        initializeViews((T) getItem(position), (ViewHolder) convertView.getTag());
+        holder.position = position;
+        initHolderViews(getItem(position), holder, position);
+        convertView.setOnClickListener(onItemClickListener);
         return convertView;
     }
 
-    private void initializeViews(T object, ViewHolder holder) {
-        //TODO implement
+    private void initHolderViews(T data, ViewHolder holder, int position) {
     }
+
+    private void onItemClick(View convertView, T data, ViewHolder holder, int position) {
+    }
+
+    private View.OnClickListener onItemClickListener = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            ViewHolder holder = (ViewHolder) v.getTag();
+            if (holder == null || holder.position >= datas.size())
+                return;
+            onItemClick(v, datas.get(holder.position), holder, holder.position);
+        }
+    };
 
     protected class ViewHolder {
         private SimpleDraweeView icon;
         private TextView name;
         private TextView content;
+        private int position;
 
         public ViewHolder(View view) {
             icon = (SimpleDraweeView) view.findViewById(R.id.icon);
