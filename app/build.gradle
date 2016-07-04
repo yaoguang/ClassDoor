@@ -32,6 +32,14 @@ android {
         exclude 'META-INF/maven/com.nineoldandroids/library/pom.properties'
         exclude 'META-INF/maven/com.nineoldandroids/library/pom.xml'
     }
+
+
+}
+
+repositories{
+    flatDir{
+        dirs 'libs' //就是你放aar的目录地址
+    }
 }
 
 dependencies {
@@ -43,4 +51,6 @@ dependencies {
     compile 'com.zhy:percent-support-extends:1.1.1'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile project(':volley')
+    compile name:'SMSSDK-2.1.0',ext:'aar'
+    compile name:'SMSSDKGUI-2.1.0',ext:'aar'
 }

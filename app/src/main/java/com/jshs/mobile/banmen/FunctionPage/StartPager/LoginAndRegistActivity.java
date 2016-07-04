@@ -3,6 +3,8 @@ package com.jshs.mobile.banmen.FunctionPage.StartPager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -100,18 +102,23 @@ public class LoginAndRegistActivity extends BaseFragmentActivity implements Logi
     }
 
     @Override
-    public void showToast(String Message) {
-        Toast.makeText(this, Message, Toast.LENGTH_SHORT).show();
+    public void showToast(final String Message) {
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+	        @Override
+	        public void run() {
+		        Toast.makeText(LoginAndRegistActivity.this, Message, Toast.LENGTH_SHORT).show();
+	        }
+        });
     }
 
     @Override
     public void onCodeCountDown(int s) {
-        ((RegistFragment) fragments.get(0)).setCodeBtnText(String.valueOf(s) + "秒");
+        ((RegistFragment) fragments.get(1)).setCodeBtnText(String.valueOf(s) + "秒");
     }
 
     @Override
     public void onCodeCountDownComplete() {
-        ((RegistFragment) fragments.get(0)).setCodeBtnText("获取验证码");
+        ((RegistFragment) fragments.get(1)).setCodeBtnText("获取验证码");
     }
 
     @Override
