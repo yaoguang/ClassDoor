@@ -29,7 +29,7 @@ public class BaseApplication extends Application {
 
         initNeedContext();
 	    SMSSDK.initSDK(this, "145a09821cc00", "8ccaef7aa2b4b7e5553ff241030b6c99");
-
+		Fresco.initialize(this);
 	    DataBase.setContext(this);
         DataBase.getInstance(new DataBase.OnDbUpgradeListener() {
             @Override
