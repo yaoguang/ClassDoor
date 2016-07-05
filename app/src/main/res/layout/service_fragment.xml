@@ -1,35 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:cube_ptr="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
+    xmlns:cube_ptr="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <include layout="@layout/status_bar_layout"/>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/title_bar_height"
-        android:background="@color/title_back"
-        android:orientation="horizontal">
-
-        <ImageView
-            android:layout_width="@dimen/title_img_width"
-            android:layout_height="@dimen/title_bar_height"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="@dimen/title_bar_height"
-            android:layout_centerInParent="true"
-            android:gravity="center"
-            android:text="服务"
-            android:textColor="@color/title_text_color"
-            android:textSize="@dimen/title_text_size"/>
-    </RelativeLayout>
-
-    <com.jshs.mobile.banmen.UIComponents.LineView
-        android:layout_width="match_parent"
-        android:layout_height="1px"/>
+    <include layout="@layout/title_item" />
 
     <android.support.v4.widget.SwipeRefreshLayout
         android:id="@+id/refreshlayout"
@@ -42,7 +18,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="@color/white"/>
+            android:background="@color/white" />
     </android.support.v4.widget.SwipeRefreshLayout>
 
     <LinearLayout
@@ -61,7 +37,7 @@
             android:padding="3dp"
             android:textColor="#655f5f"
             android:textColorHint="#aaaaaa"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
         <TextView
             android:layout_width="80dp"
@@ -72,7 +48,7 @@
             android:gravity="center"
             android:text="搜索"
             android:textColor="#ffffff"
-            android:textSize="14sp"/>
+            android:textSize="14sp" />
 
     </LinearLayout>
 </LinearLayout>

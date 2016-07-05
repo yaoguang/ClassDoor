@@ -37,29 +37,63 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".FunctionPage.Blank.BlankActivity">
+        <activity
+            android:name=".FunctionPage.Blank.BlankActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".FunctionPage.StartPager.LoginAndRegistActivity" />
-        <activity android:name=".FunctionPage.Home.HomeActivity" />
-        <activity android:name=".FunctionPage.MinePager.UpgradeSupplierActivity" />
-        <activity android:name=".FunctionPage.MinePager.MineInfoActivity" />
-        <activity android:name=".FunctionPage.MinePager.SetActivity" />
-        <activity android:name=".FunctionPage.MinePager.MineCollectActivity" />
-        <activity android:name=".FunctionPage.MinePager.MineDownloadActivity" />
-        <activity android:name=".FunctionPage.MinePager.MineFansActivity" />
-        <activity android:name=".FunctionPage.AbleManPager.LookAroundActivity" />
-        <activity android:name=".FunctionPage.AbleManPager.NetUserFeiActivity" />
-        <activity android:name=".FunctionPage.AbleManPager.BusinessCardActivity" />
-        <activity android:name=".FunctionPage.AbleManPager.MineCardcaseActivity" />
-        <activity android:name=".FunctionPage.AbleManPager.NewAnleManActivity" />
-        <activity android:name=".FunctionPage.AbleManPager.SameFriendActivity" />
-        <activity android:name=".FunctionPage.AbleManPager.SearchAbleManActivity" />
-        <activity android:name=".FunctionPage.AbleManPager.SearchResultActivity" />
+        <activity
+            android:name=".FunctionPage.StartPager.LoginAndRegistActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.Home.HomeActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.MinePager.UpgradeSupplierActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.MinePager.MineInfoActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.MinePager.SetActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.MinePager.MineCollectActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.MinePager.MineDownloadActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.MinePager.MineFansActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.AbleManPager.LookAroundActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.AbleManPager.NetUserFeiActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.AbleManPager.BusinessCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.AbleManPager.MineCardcaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.AbleManPager.NewAnleManActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.AbleManPager.SameFriendActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.AbleManPager.SearchAbleManActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.AbleManPager.SearchResultActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
