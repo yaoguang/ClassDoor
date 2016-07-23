@@ -94,6 +94,9 @@
         <activity
             android:name=".FunctionPage.AbleManPager.SearchResultActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.GalleryPager.GalleryDetailActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

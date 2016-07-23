@@ -64,7 +64,7 @@ public class LoginAndRegistPresenter extends BasePresenter implements LoginAndRe
 					//回调完成
 					if (event == SMSSDK.EVENT_SUBMIT_VERIFICATION_CODE) {
 						//提交验证码成功
-						model.RegistRequest(phone, password, code, LoginAndRegistPresenter.this);
+						model.RegistRequest(phone, password, LoginAndRegistPresenter.this);
 					} else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE) {
 						//获取验证码成功
 						onRequestCodeSuccess();

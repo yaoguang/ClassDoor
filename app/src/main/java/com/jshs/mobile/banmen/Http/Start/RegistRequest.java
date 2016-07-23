@@ -15,11 +15,10 @@ import java.io.UnsupportedEncodingException;
  * Created by SZH on 2016/6/12.
  */
 public class RegistRequest extends PostRequest<String> {
-    public RegistRequest(String mobile, String password, String verifycode, Response.Listener<String> listener, Response.ErrorListener errorListener) {
+    public RegistRequest(String mobile, String password, Response.Listener<String> listener, Response.ErrorListener errorListener) {
         super(Domain.REGIST, listener, errorListener);
         mRequestArgs.put("mobile", mobile);
         mRequestArgs.put("password", password);
-        mRequestArgs.put("verifycode", verifycode);
     }
 
     @Override

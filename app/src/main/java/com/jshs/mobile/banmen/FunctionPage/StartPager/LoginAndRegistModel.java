@@ -40,8 +40,8 @@ public class LoginAndRegistModel extends BaseManager {
 				}));
 	}
 
-	public void RegistRequest(final String phone, final String password, String code, final onRequestComplete listener) {
-		AsyncHttp.getInstance().addRequest(new RegistRequest(phone, password, code,
+	public void RegistRequest(final String phone, final String password, final onRequestComplete listener) {
+		AsyncHttp.getInstance().addRequest(new RegistRequest(phone, password,
 				new Response.Listener<String>() {
 					@Override
 					public void onResponse(String response) {

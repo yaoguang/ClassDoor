@@ -29,4 +29,28 @@ public class Domain {
      * 获取用户信息
      */
     public static final String GET_CATEGORY_LIST = "category/get_category_list";
+
+
+    /**
+     * 获取图库列表
+     */
+    public static final String GET_GALLERY_LIST = "gallery/get_gallery_list";
+    /**
+     * 获取图库详情
+     */
+    public static final String GET_GALLERY_DETAILS = "gallery/get_gallery_details";
+
+
+    /**
+     * 获取我的图库
+     */
+    public static final String GET_GALLERY_MYLIST = "gallery/get_gallery_mylist";
+
+    /**
+     * 图库-发布图片
+     */
+    public static final String POST_GALLERY_MYGALLERY= "gallery/post_gallery_mygallery";
+
+
+
 }
