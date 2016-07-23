@@ -1,1 +1,1 @@
-include ':app', ':volley'
+include ':app', ':volley', ':Rong_Cloud_Android_IMKit_SDK_v2_6_5_stable'

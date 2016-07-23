@@ -29,6 +29,14 @@ public class Domain {
      * 获取用户信息
      */
     public static final String GET_CATEGORY_LIST = "category/get_category_list";
+    /**
+     * 升级为供应商
+     */
+    public static final String UPGRADE_SUPPLIER = "user/post_category_supplier";
+    /**
+     * 升级为供应商
+     */
+    public static final String GET_MINE_GALLERY = "gallery/get_gallery_mylist";
 
 
     /**

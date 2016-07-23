@@ -1,33 +1,33 @@
 package com.jshs.mobile.banmen.FunctionPage.IMPager;
 
-import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
-import com.jshs.mobile.banmen.BaseContent.BaseFragment;
 import com.jshs.mobile.banmen.BaseContent.BaseHomePager;
 import com.jshs.mobile.banmen.R;
+import com.jshs.mobile.banmen.Tools.TitleHolder;
+
+import org.xutils.view.annotation.ContentView;
 
 /**
  * Created by icezers on 16/6/8.
  */
+@ContentView(R.layout.imlist_fragment)
 public class IMFragment extends BaseHomePager {
-
-    View _rootView;
-
     @Override
     public void onPagerSelect() {
-        TextView textView = (TextView) _rootView.findViewById(R.id.text);
-        textView.setText(TAG());
     }
 
-
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        _rootView = inflater.inflate(R.layout.demo_fragment, container, false);
-        return _rootView;
+    public void initViews() {
+        titleHolder = new TitleHolder(getActivity(), getContent(), R.string.im);
+        titleHolder.initBtns(R.drawable.iconfont_remind, R.drawable.iconfont_iconfontyiwenfill, new TitleHolder.TitleBtnClick() {
+            @Override
+            public void onLeftBtnClick(View view) {
+            }
+
+            @Override
+            public void onRightBtnClick(View view) {
+            }
+        });
     }
 }
