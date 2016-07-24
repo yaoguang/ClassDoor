@@ -3,6 +3,7 @@ package com.jshs.mobile.banmen.FunctionPage.AbleManPager;
 import android.widget.ListView;
 
 import com.jshs.mobile.banmen.BaseContent.XBaseActivity;
+import com.jshs.mobile.banmen.Models.AbleMan.AbleMan;
 import com.jshs.mobile.banmen.R;
 import com.jshs.mobile.banmen.Tools.TitleHolder;
 
@@ -18,23 +19,16 @@ import java.util.ArrayList;
 public class SameFriendActivity extends XBaseActivity {
     @ViewInject(R.id.listview)
     private ListView listView;
-    private ArrayList<String> datas = new ArrayList<>();
-    private BaseUserinfoAdapter<String> adapter;
+    private ArrayList<AbleMan> datas = new ArrayList<>();
+    private BaseUserinfoAdapter<AbleMan> adapter;
 
     @Override
     protected void initViews() {
         titleHolder = TitleHolder.initSimpleTitle(this, R.string.same_friend);
     }
 
-    public void initData() {
-        datas.add("");
-        datas.add("");
-        datas.add("");
-        datas.add("");
-    }
-
     public void initAction() {
-        adapter = new BaseUserinfoAdapter<String>(this, null, datas);
+        adapter = new BaseUserinfoAdapter(this, null, datas);
         listView.setAdapter(adapter);
     }
 }

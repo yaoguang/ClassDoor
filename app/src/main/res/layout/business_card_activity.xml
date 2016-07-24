@@ -58,7 +58,7 @@
             android:textSize="@dimen/default_my_text_size" />
 
         <TextView
-            android:id="@+id/name"
+            android:id="@+id/address"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

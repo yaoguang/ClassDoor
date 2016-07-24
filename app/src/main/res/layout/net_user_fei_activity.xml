@@ -203,7 +203,8 @@
                 android:paddingRight="10dp"
                 android:text="通过好友认识他"
                 android:textColor="@color/default_text_color"
-                android:textSize="@dimen/default_my_text_size" />
+                android:textSize="@dimen/default_my_text_size"
+                android:visibility="gone" />
 
             <LinearLayout
                 android:id="@+id/same_friend_lay"

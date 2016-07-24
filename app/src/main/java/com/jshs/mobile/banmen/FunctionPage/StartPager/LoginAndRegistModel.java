@@ -18,90 +18,91 @@ import cn.smssdk.SMSSDK;
  */
 public class LoginAndRegistModel extends BaseManager {
 
-	public void LoginRequest(String username, String password, final onRequestComplete listener) {
-		AsyncHttp.getInstance().addRequest(new LoginRequest(username, password,
-				new Response.Listener<User>() {
-					@Override
-					public void onResponse(User response) {
-						UserUtils.getInstance().updateUser(response);
-						if (listener != null) {
-							listener.onRequestLoginSuccess();
-						}
-					}
-				},
-				new CodeErrorListener() {
-					@Override
-					public void onErrorResponse(VolleyError error) {
-						super.onErrorResponse(error);
-						if (listener != null) {
-							listener.onRequestLoginError();
-						}
-					}
-				}));
-	}
+    public void LoginRequest(String username, String password, final onRequestComplete listener) {
+        AsyncHttp.getInstance().addRequest(new LoginRequest(username, password,
+                new Response.Listener<User>() {
+                    @Override
+                    public void onResponse(User response) {
+                        UserUtils.getInstance().updateUser(response);
+                        if (listener != null) {
+                            listener.onRequestLoginSuccess();
+                        }
+                    }
+                },
+                new CodeErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        super.onErrorResponse(error);
+                        if (listener != null) {
+                            listener.onRequestLoginError();
+                        }
+                    }
+                }));
+    }
 
-	public void RegistRequest(final String phone, final String password, final onRequestComplete listener) {
-		AsyncHttp.getInstance().addRequest(new RegistRequest(phone, password,
-				new Response.Listener<String>() {
-					@Override
-					public void onResponse(String response) {
-						if (listener != null) {
-							listener.onRequestRegistSuccess(phone, password);
-						}
-					}
-				},
-				new CodeErrorListener() {
-					@Override
-					public void onErrorResponse(VolleyError error) {
-						super.onErrorResponse(error);
-						if (listener != null) {
-							listener.onRequestRegistError();
-						}
-					}
-				}));
-	}
+    public void RegistRequest(final String phone, final String password, final onRequestComplete listener) {
+        AsyncHttp.getInstance().addRequest(new RegistRequest(phone, password,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        if (listener != null) {
+                            listener.onRequestRegistSuccess(phone, password);
+                        }
+                    }
+                },
+                new CodeErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        super.onErrorResponse(error);
+                        if (listener != null) {
+                            listener.onRequestRegistError();
+                        }
+                    }
+                }));
+    }
 
-	public void CodeRequset(String phone) {
-		SMSSDK.getVerificationCode("86", phone);
-	}
+    public void CodeRequset(String phone) {
+        SMSSDK.getVerificationCode("86", phone);
+    }
 
-	public void UserInfoRequset(String token, final onRequestComplete listener) {
-		AsyncHttp.getInstance().addRequest(new GetUserInfoRequest(new Response.Listener<User>() {
-			@Override
-			public void onResponse(User response) {
-				UserUtils.getInstance().updateUser(response);
-				if (listener != null) {
-					listener.onRequestUserInfoSuccess();
-				}
-			}
-		}, new CodeErrorListener() {
-			@Override
-			public void onErrorResponse(VolleyError error) {
-				super.onErrorResponse(error);
-				if (listener != null) {
-					listener.onRequestUserInfoError();
-				}
-			}
-		}));
-	}
+    public void UserInfoRequset(String token, final onRequestComplete listener) {
+        AsyncHttp.getInstance().addRequest(new GetUserInfoRequest(new Response.Listener<User>() {
+            @Override
+            public void onResponse(User response) {
+                response.setUid(UserUtils.getInstance().getUser().getUid());
+                UserUtils.getInstance().updateUser(response);
+                if (listener != null) {
+                    listener.onRequestUserInfoSuccess();
+                }
+            }
+        }, new CodeErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                super.onErrorResponse(error);
+                if (listener != null) {
+                    listener.onRequestUserInfoError();
+                }
+            }
+        }));
+    }
 
 
-	public interface onRequestComplete {
-		void onRequestRegistSuccess(String phone, String password);
+    public interface onRequestComplete {
+        void onRequestRegistSuccess(String phone, String password);
 
-		void onRequestRegistError();
+        void onRequestRegistError();
 
-		void onRequestLoginSuccess();
+        void onRequestLoginSuccess();
 
-		void onRequestLoginError();
+        void onRequestLoginError();
 
-		void onRequestUserInfoSuccess();
+        void onRequestUserInfoSuccess();
 
-		void onRequestUserInfoError();
+        void onRequestUserInfoError();
 
-		void onRequestCodeSuccess();
+        void onRequestCodeSuccess();
 
-		void onRequestCodeError();
-	}
+        void onRequestCodeError();
+    }
 
 }

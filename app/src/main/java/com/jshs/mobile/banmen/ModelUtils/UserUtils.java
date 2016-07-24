@@ -52,6 +52,4 @@ public class UserUtils extends BaseModelUtil {
         _user = null;
         _dataBase.dropTable(User.class);
     }
-
-
 }

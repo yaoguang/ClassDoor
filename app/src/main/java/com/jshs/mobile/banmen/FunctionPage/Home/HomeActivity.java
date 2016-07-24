@@ -1,5 +1,6 @@
 package com.jshs.mobile.banmen.FunctionPage.Home;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentManager;
@@ -8,10 +9,14 @@ import android.support.v4.view.ViewPager;
 import android.view.View;
 
 import com.jshs.mobile.banmen.BaseContent.BaseFragmentActivity;
+import com.jshs.mobile.banmen.Events.LoginOutEvent;
+import com.jshs.mobile.banmen.FunctionPage.StartPager.LoginAndRegistActivity;
 import com.jshs.mobile.banmen.R;
 import com.jshs.mobile.banmen.Tools.MLOG_LEVEL;
 import com.jshs.mobile.banmen.Tools.MLog;
 
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 import org.xutils.view.annotation.ContentView;
 import org.xutils.view.annotation.ViewInject;
 import org.xutils.x;
@@ -62,6 +67,8 @@ public class HomeActivity extends BaseFragmentActivity implements HomeView, View
             view.setOnClickListener(this);
             barItems.add(view);
         }
+
+        EventBus.getDefault().register(this);
     }
 
 
@@ -116,5 +123,15 @@ public class HomeActivity extends BaseFragmentActivity implements HomeView, View
         }, 100);
     }
 
+    @Override
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
 
+    @Subscribe
+    public void loginOut(LoginOutEvent event) {
+        startActivity(new Intent(HomeActivity.this, LoginAndRegistActivity.class));
+        finish();
+    }
 }

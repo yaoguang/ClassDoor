@@ -8,9 +8,7 @@ import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.jshs.mobile.banmen.BaseContent.BaseApplication;
 import com.jshs.mobile.banmen.BaseContent.XBaseFragment;
-import com.jshs.mobile.banmen.ModelUtils.UserUtils;
 import com.jshs.mobile.banmen.R;
 
 import org.xutils.view.annotation.ContentView;
@@ -73,11 +71,11 @@ public class LoginFragment extends XBaseFragment {
     }
 
     private void login() {
-        presenter.view.showToast("登录成功");
-        presenter.view.onLoginSuccess();
-        presenter.view.hideProgressDiaolog();
-        BaseApplication.getInstance().connect(UserUtils.getInstance().getUser().getIm_token());
+//        presenter.view.showToast("登录成功");
+//        presenter.view.onLoginSuccess();
+//        presenter.view.hideProgressDiaolog();
+//        BaseApplication.getInstance().connect(UserUtils.getInstance().getUser().getIm_token());
 
-//        presenter.requestLogin(username.getText().toString(), password.getText().toString());
+        presenter.requestLogin(username.getText().toString(), password.getText().toString());
     }
 }

@@ -56,4 +56,5 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:22.2.1'
     compile 'com.android.support:cardview-v7:22.2.1'
     compile project(':Rong_Cloud_Android_IMKit_SDK_v2_6_5_stable')
+    compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }

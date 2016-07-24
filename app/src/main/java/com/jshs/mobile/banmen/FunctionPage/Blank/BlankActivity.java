@@ -7,6 +7,7 @@ import android.os.Handler;
 import com.jshs.mobile.banmen.BaseContent.BaseActivity;
 import com.jshs.mobile.banmen.FunctionPage.Home.HomeActivity;
 import com.jshs.mobile.banmen.FunctionPage.StartPager.LoginAndRegistActivity;
+import com.jshs.mobile.banmen.ModelUtils.UserUtils;
 import com.jshs.mobile.banmen.R;
 
 import org.xutils.view.annotation.ContentView;
@@ -23,13 +24,17 @@ public class BlankActivity extends BaseActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         x.view().inject(this);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                startActivity(new Intent(BlankActivity.this, LoginAndRegistActivity.class));
-                finish();
-
-            }
-        }, 2000);
+        if (UserUtils.getInstance().isLogin()) {
+            startActivity(new Intent(BlankActivity.this, HomeActivity.class));
+            finish();
+        } else {
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    startActivity(new Intent(BlankActivity.this, LoginAndRegistActivity.class));
+                    finish();
+                }
+            }, 1000);
+        }
     }
 }

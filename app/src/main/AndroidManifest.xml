@@ -83,6 +83,12 @@
             android:name=".FunctionPage.MinePager.MineFansActivity"
             android:screenOrientation="portrait" />
         <activity
+            android:name=".FunctionPage.MinePager.MineScanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FunctionPage.MinePager.MIneGalleryActivity"
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".FunctionPage.AbleManPager.LookAroundActivity"
             android:screenOrientation="portrait" />
         <activity
@@ -108,7 +114,11 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".FunctionPage.GalleryPager.GalleryDetailActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

@@ -8,14 +8,15 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.jshs.mobile.banmen.Models.Mine.Download;
 import com.jshs.mobile.banmen.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MineDownloadAdapter<T> extends BaseAdapter {
+public class MineDownloadAdapter extends BaseAdapter {
 
-    private List<T> datas = new ArrayList<>();
+    private List<Download> datas = new ArrayList<>();
 
     private Context context;
     private LayoutInflater layoutInflater;
@@ -25,13 +26,13 @@ public class MineDownloadAdapter<T> extends BaseAdapter {
         this.layoutInflater = LayoutInflater.from(context);
     }
 
-    public MineDownloadAdapter(Context context, List<T> datas) {
+    public MineDownloadAdapter(Context context, List<Download> datas) {
         this.context = context;
         this.layoutInflater = LayoutInflater.from(context);
         this.datas = datas;
     }
 
-    public void setDatas(List<T> datas) {
+    public void setDatas(List<Download> datas) {
         this.datas = datas;
         notifyDataSetChanged();
     }
@@ -42,7 +43,7 @@ public class MineDownloadAdapter<T> extends BaseAdapter {
     }
 
     @Override
-    public T getItem(int position) {
+    public Download getItem(int position) {
         return datas.get(position);
     }
 
@@ -67,10 +68,10 @@ public class MineDownloadAdapter<T> extends BaseAdapter {
         return convertView;
     }
 
-    private void initHolderViews(T data, ViewHolder holder, int position) {
+    private void initHolderViews(Download data, ViewHolder holder, int position) {
     }
 
-    private void onItemClick(View convertView, T data, ViewHolder holder, int position) {
+    private void onItemClick(View convertView, Download data, ViewHolder holder, int position) {
     }
 
     private View.OnClickListener onItemClickListener = new View.OnClickListener() {

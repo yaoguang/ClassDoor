@@ -4,6 +4,7 @@ import android.widget.ListView;
 
 import com.jshs.mobile.banmen.BaseContent.XBaseActivity;
 import com.jshs.mobile.banmen.FunctionPage.AbleManPager.BaseUserinfoAdapter;
+import com.jshs.mobile.banmen.Models.AbleMan.AbleMan;
 import com.jshs.mobile.banmen.R;
 import com.jshs.mobile.banmen.Tools.TitleHolder;
 
@@ -19,18 +20,12 @@ import java.util.ArrayList;
 public class MineFansActivity extends XBaseActivity {
     @ViewInject(R.id.listview)
     private ListView listview;
-    private ArrayList<String> datas = new ArrayList<>();
-    private BaseUserinfoAdapter<String> adapter;
+    private ArrayList<AbleMan> datas = new ArrayList<>();
+    private BaseUserinfoAdapter<AbleMan> adapter;
 
     @Override
     protected void initViews() {
         titleHolder = TitleHolder.initSimpleTitle(this, R.string.my_fans);
-    }
-
-    public void initData() {
-        datas.add("");
-        datas.add("");
-        datas.add("");
     }
 
     public void initAction() {

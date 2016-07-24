@@ -1,7 +1,6 @@
 package com.jshs.mobile.banmen.FunctionPage.AbleManPager;
 
 import android.content.Context;
-import android.content.Intent;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,18 +9,22 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.facebook.drawee.view.SimpleDraweeView;
+import com.jshs.mobile.banmen.Models.AbleMan.AbleMan;
 import com.jshs.mobile.banmen.R;
+import com.jshs.mobile.banmen.Tools.TextTools;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class BaseUserinfoAdapter<T> extends BaseAdapter {
+public class BaseUserinfoAdapter<T extends AbleMan> extends BaseAdapter {
 
     private List<T> datas = new ArrayList<>();
 
     private Context context;
     private LayoutInflater layoutInflater;
     private String actionContent;
+    private OnAdapterBottomListener bottomListener;
+    private boolean isLoading = false;
 
     public BaseUserinfoAdapter(Context context, String actionContent) {
         this.context = context;
@@ -69,14 +72,22 @@ public class BaseUserinfoAdapter<T> extends BaseAdapter {
         holder.position = position;
         initHolderViews(getItem(position), holder, position);
         convertView.setOnClickListener(onItemClickListener);
+        holder.action.setOnClickListener(onItemClickListener);
         return convertView;
     }
 
-    private void initHolderViews(T data, ViewHolder holder, int position) {
+    protected void initHolderViews(T data, ViewHolder holder, int position) {
+        holder.icon.setImageURI(Uri.parse(TextTools.getNotNull(data.thumbnail)));
+        holder.name.setText(TextTools.getNotNull(data.nickname));
+        holder.content.setText(context.getString(R.string.signature_with) + TextTools.getNotNull(data.signature));
+
+        if (bottomListener != null && position == getCount() - 1 && !isLoading) {
+            isLoading = true;
+            bottomListener.onAdapterBottom();
+        }
     }
 
-    private void onItemClick(View convertView, T data, ViewHolder holder, int position) {
-        context.startActivity(new Intent(context, NetUserFeiActivity.class));
+    protected void onItemClick(View convertView, T data, ViewHolder holder, int position) {
     }
 
     private View.OnClickListener onItemClickListener = new View.OnClickListener() {
@@ -90,17 +101,18 @@ public class BaseUserinfoAdapter<T> extends BaseAdapter {
     };
 
     protected class ViewHolder {
-        private SimpleDraweeView icon;
-        private TextView name;
-        private TextView content;
-        private TextView action;
-        private int position;
+        protected SimpleDraweeView icon;
+        protected TextView name;
+        protected TextView content;
+        protected TextView action;
+        protected int position;
 
         public ViewHolder(View view) {
             icon = (SimpleDraweeView) view.findViewById(R.id.icon);
             name = (TextView) view.findViewById(R.id.name);
             content = (TextView) view.findViewById(R.id.content);
             action = (TextView) view.findViewById(R.id.action);
+            action.setTag(this);
 
             if (actionContent == null) {
                 action.setVisibility(View.GONE);
@@ -108,8 +120,18 @@ public class BaseUserinfoAdapter<T> extends BaseAdapter {
                 action.setVisibility(View.VISIBLE);
                 action.setText(actionContent);
             }
-
-            icon.setImageURI(Uri.parse("http://i2.hdslb.com/bfs/face/7c3fe391deb34e8b6f72794474ecad69c5c39494.jpg"));
         }
+    }
+
+    public void loadingOver() {
+        isLoading = false;
+    }
+
+    public void setBottomListener(OnAdapterBottomListener bottomListener) {
+        this.bottomListener = bottomListener;
+    }
+
+    public interface OnAdapterBottomListener {
+        void onAdapterBottom();
     }
 }
